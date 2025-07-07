@@ -2,10 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-lightBackground dark:bg-darkBackground text-lightTextPrimary dark:text-darkTextPrimary font-sans;
-}
-
-h1, h2, h3, h4 {
-  @apply text-primary font-heading;
-}

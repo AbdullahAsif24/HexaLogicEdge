@@ -91,6 +91,7 @@ export default function AnimatedButton({ children, className = "", ...props }) {
           <span
             key={i}
             className="animated-letter inline-block"
+            
             style={{ display: char === " " ? "inline" : "inline-block" }}
           >
             {char}

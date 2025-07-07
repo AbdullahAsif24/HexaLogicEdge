@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <>
       <AnimatedHoverText className="text-black font-bold text-2xl" startColor="black" midColor="white" endColor="blue">
-        <sapn>Nasha Hack</span>
+        Nasha Hack
       </AnimatedHoverText>
       <HomeSec />
     </>

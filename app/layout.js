@@ -18,15 +18,9 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <Navbar />
         <div
-          className="
-          relative
-          h-[90vh] md:h-[97vh] overflow-x-hidden
-          bg-[#1e2235] text-[#ede8f5]
-          font-sans rounded-lg m-2  
-          flex items-center justify-center
-        "
+          className="h-[90vh] md:h-[97vh] overflow-x-hidden bg-[#1e2235] text-[#ede8f5] rounded-lg m-2 flex items-center justify-center"
         >
-          <AnimatedAbstract />
+        <AnimatedAbstract />
           {children}
         </div>
       </body>

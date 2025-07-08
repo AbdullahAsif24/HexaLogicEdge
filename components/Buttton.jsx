@@ -34,20 +34,21 @@ export default function AnimatedButton({ children, className = "", ...props }) {
     function onEnter() {
       // Change bg color once on hover
       gsap.to(bg, {
-        backgroundColor: "#fbbf24", // Amber-400
+        backgroundColor: "#ede8f5", // Light lavender on hover
         duration: 0.4,
         ease: "power1.out",
       });
-
+    
       // Animate letters: stagger color and scale
       gsap.to(letterEls, {
-        color: "#1e2235", // Dark text on amber
+        color: "#1e2235", // Dark text on light background
         scale: 1.2,
         duration: 0.4,
         stagger: 0.05,
         ease: "power3.out",
       });
     }
+    
 
     function onLeave() {
       // Revert bg color

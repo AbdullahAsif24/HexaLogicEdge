@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
@@ -86,13 +87,14 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 items-center font-medium text-[15px]">
           {["Home", "About", "Services", "Work", "Contact"].map((link) => (
-            <li
+            <Link
+              href={link === "Home" ? "/" : `/${link.toLowerCase()}`}
               key={link}
               onClick={handleLinkClick}
               className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
             >
               {link}
-            </li>
+            </Link>
           ))}
         </ul>
 
@@ -120,13 +122,14 @@ export default function Navbar() {
       >
         <ul className="flex flex-col gap-5 text-center font-medium text-[16px]">
           {["Home", "About", "Services", "Work", "Contact"].map((link) => (
-            <li
+            <Link
+              href={link === "Home" ? "/" : `/${link.toLowerCase()}`}
               key={link}
               onClick={handleLinkClick}
               className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
             >
               {link}
-            </li>
+            </Link>
           ))}
 
           {/* Uncomment to enable theme toggle */}

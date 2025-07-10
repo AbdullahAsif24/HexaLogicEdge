@@ -1,22 +1,13 @@
-"use client";
-
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+"use client
 import AnimatedHoverText from "./AnimatedTextHover";
 import AnimatedButton from "./Buttton";
-
-gsap.registerPlugin(ScrollTrigger);
 
 
 export default function HomeSec() {
 
 
-
-
-
   return (
-    <div className="">
-
+    <>
 
       {/* Content */}
       <div className="relative z-10 px-4 py-4 md:px-10 md:py-10 lg:px-16 lg:py-16 max-w-5xl text-center">
@@ -47,15 +38,9 @@ export default function HomeSec() {
 
 
         <div className="flex justify-center gap-6 mt-6 flex-wrap">
-          {/* <button className="cta-button font-heading bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transform hover:scale-110 transition">
-            Start Your Project
-          </button>
-          <button className="cta-button font-heading border border-indigo-400 text-indigo-400 px-6 py-3 rounded-lg hover:bg-indigo-600 hover:text-white transform hover:scale-110 transition">
-            Explore Portfolio
-          </button> */}
           <AnimatedButton>Start Your Project</AnimatedButton>
         </div>
       </div>
-    </div>
+    </>
   );
 }

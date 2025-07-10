@@ -3,8 +3,9 @@ import React from 'react'
 
 const page = () => {
   return (
-    <HomeSec />
+    <HomeSec/>
   )
 }
 
-export default page 
+export default page
+

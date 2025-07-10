@@ -1,4 +1,4 @@
-"use client
+"use client"
 import AnimatedHoverText from "./AnimatedTextHover";
 import AnimatedButton from "./Buttton";
 

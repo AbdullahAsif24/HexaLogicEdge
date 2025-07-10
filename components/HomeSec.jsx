@@ -1,13 +1,14 @@
-"use client";
-
+"use client
 import AnimatedHoverText from "./AnimatedTextHover";
 import AnimatedButton from "./Buttton";
 
 
 export default function HomeSec() {
 
+
   return (
     <>
+
       {/* Content */}
       <div className="relative z-10 px-4 py-4 md:px-10 md:py-10 lg:px-16 lg:py-16 max-w-5xl text-center">
         <h1

@@ -87,13 +87,16 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 items-center font-medium text-[15px]">
           {["Home", "About", "Services", "Work", "Contact"].map((link) => (
+
             <Link href={`/${link.toLowerCase()}`} key={link}>
             <li
               onClick={handleLinkClick}
               className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
             >
               {link}
+
             </li>
+
             </Link>
           ))}
         </ul>
@@ -122,13 +125,17 @@ export default function Navbar() {
       >
         <ul className="flex flex-col gap-5 text-center font-medium text-[16px]">
           {["Home", "About", "Services", "Work", "Contact"].map((link) => (
+
             <Link href={`/${link.toLowerCase()}`} key={link}>
             <li
+
               onClick={handleLinkClick}
               className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
             >
               {link}
+
             </li>
+
             </Link>
           ))}
 

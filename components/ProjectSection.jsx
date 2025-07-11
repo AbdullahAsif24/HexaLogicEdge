@@ -26,7 +26,6 @@ export default function ProjectsSection() {
 
   return (
     <AnimatedBgForPr>
-      <Navbar />
 
       <div className="h-full flex flex-col px-4 sm:px-6">
         {/* Main Section */}

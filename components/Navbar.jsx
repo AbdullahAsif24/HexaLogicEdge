@@ -86,7 +86,7 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 items-center font-medium text-[15px]">
-          {["Home", "About", "Services", "Work", "Contact"].map((link) => (
+          {["Home", "Services", "Work", "Contact"].map((link) => (
 
             <Link href={`/${link.toLowerCase()}`} key={link}>
             <li
@@ -124,7 +124,7 @@ export default function Navbar() {
         `}
       >
         <ul className="flex flex-col gap-5 text-center font-medium text-[16px]">
-          {["Home", "About", "Services", "Work", "Contact"].map((link) => (
+          {["Home", "Services", "Work", "Contact"].map((link) => (
 
             <Link href={`/${link.toLowerCase()}`} key={link}>
             <li

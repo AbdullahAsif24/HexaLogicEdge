@@ -1,11 +1,9 @@
 
-export default function RootLayout({ children }) {
+export default function ProjectRootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="overflow-hidden">
+      <div className="overflow-hidden">
           {children}
 
-      </body>
-    </html>
+      </div>
   );
 }

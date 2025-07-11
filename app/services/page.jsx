@@ -1,9 +1,8 @@
-import React from 'react'
+import ServicesSec from "@/components/ServicesSec";
 
-const Page = () => {
+
+export default function Page() {
   return (
-    <div>Services Page</div>
-  )
+    <ServicesSec/>
+  );
 }
-
-export default Page 

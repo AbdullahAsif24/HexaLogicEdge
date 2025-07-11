@@ -1,11 +1,15 @@
 
 import HomeSec from "../components/HomeSec";
 import Navbar from "../components/Navbar";
+import AnimatedBg from "../components/AnimatedBg";
 
 export default function Page() {
   return (
     <>
-      <HomeSec />
+      <Navbar />
+      <AnimatedBg>
+        <HomeSec />
+      </AnimatedBg>
     </>
 
   );

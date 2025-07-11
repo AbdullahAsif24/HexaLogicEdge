@@ -21,7 +21,7 @@ export default function HomeSec() {
           <AnimatedHoverText startColor="#adbbda" midColor="#1e2235">
             HEXALOGIC
           </AnimatedHoverText>
-          {" "}  Makes digital feel personal.
+          {" "} Makes digital feel personal.
         </h1>
 
         <p

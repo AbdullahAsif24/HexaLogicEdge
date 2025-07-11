@@ -2,12 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    overflow-x: hidden;
-    overflow-y: auto;
+body, html{
+    height: auto;
     scroll-behavior: smooth;
-}
-
-html{
-    scroll-behavior: smooth;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
 }

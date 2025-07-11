@@ -29,7 +29,7 @@ const AnimatedBgForPr = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative m-2 h-[90vh] md:h-[97vh] rounded-xl overflow-hidden bg-[#1e2235] text-[#ede8f5] font-sans shadow-lg">
+    <div className="relative m-2 min-h-screen md:h-[90vh] rounded-xl overflow-hidden bg-[#1e2235] text-[#ede8f5] font-sans shadow-lg">
       {/* Fixed Background SVG */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none z-0"

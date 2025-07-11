@@ -5,19 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import AnimatedHoverText from "./AnimatedTextHover";
 
 const designServices = [
-  "Information Architecture",
-  "User research and testing",
-  "Conversion optimization",
-  "Design systems",
-  "Web app design",
+  "UI/UX Design",
+  "Logo Design",
+  "Web App Design",
+  "Website Design",
+  "Mobile App Design",
 ];
 
 const developmentServices = [
-  "Mobile app design",
-  "Brand identity",
-  "Decks and social media",
-  "Internal product design",
-  "Marketing assets",
+  "Website Development",
+  "Web App Development",
+  "Cross Platform Mobile Apps",
+  "API Integrations",
+  "Performance Optimization",
+  "Ongoing Support",
 ];
 
 export default function ServicesSec() {
@@ -50,7 +51,7 @@ export default function ServicesSec() {
             onClick={() => setActiveTab("development")}
           >
             <AnimatedHoverText
-              className={`text-[3rem] md:text-[4.5rem] font-bold transition ${
+              className={`text-5xl md:text-6xl font-bold transition ${
                 activeTab === "development" ? "text-[#f1e6dd]" : "text-[#77758a]"
               }`}
             >

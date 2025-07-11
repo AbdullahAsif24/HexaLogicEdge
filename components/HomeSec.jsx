@@ -1,10 +1,11 @@
 "use client";
+import Link from "next/link";
 import AnimatedHoverText from "./AnimatedTextHover";
 import AnimatedButton from "./Buttton";
 
 export default function HomeSec() {
   return (
-    <div className="relative z-10 h-[90vh] md:h-[97vh] w-full flex items-center justify-center px-4 md:px-10 lg:px-16 overflow-hidden">
+    <div className="relative z-10 h-screen md:h-[97vh] w-full flex items-center justify-center px-4 md:px-10 lg:px-16 overflow-hidden">
       {/* Content */}
       <div className="max-w-5xl text-center">
         <h1
@@ -16,10 +17,11 @@ export default function HomeSec() {
             leading-tight md:leading-[4.5rem]
           "
         >
-          Empowering Digital Vision with{" "}
+
           <AnimatedHoverText startColor="#adbbda" midColor="#1e2235">
             HEXALOGIC
           </AnimatedHoverText>
+          {" "}  Makes digital feel personal.
         </h1>
 
         <p
@@ -33,7 +35,9 @@ export default function HomeSec() {
         </p>
 
         <div className="flex justify-center gap-6 mt-6 flex-wrap">
-          <AnimatedButton>Start Your Project</AnimatedButton>
+          <Link href="/contact">
+            <AnimatedButton>Start Your Project</AnimatedButton>
+          </Link>
         </div>
       </div>
     </div>

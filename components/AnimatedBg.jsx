@@ -35,7 +35,7 @@ const AnimatedBg = ({ children }) => {
         h-auto
     overflow-hidden
     bg-[#1e2235] text-[#ede8f5]
-    font-sans rounded-lg m-2
+    font-sans md:rounded-lg md:m-2
     flex flex-col
     scrollbar-hide
       "
@@ -54,7 +54,7 @@ const AnimatedBg = ({ children }) => {
       </svg>
 
       {/* Scrollable content with padding inside rounded box */}
-      <div className="relative z-10 w-full rounded-lg">
+      <div className="relative z-10 w-full md:rounded-lg">
         {children}
       </div>
     </div>

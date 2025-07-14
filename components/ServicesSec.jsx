@@ -33,7 +33,9 @@ export default function ServicesSec() {
         transition={{ duration: 0.6 }}
         className="mb-10 text-center"
       >
-        <h2 className="text-4xl md:text-7xl font-bold">What we do</h2>
+        <AnimatedHoverText midColor="#1e2235">
+          <h2 className="text-4xl md:text-7xl font-bold">What we do</h2>
+        </AnimatedHoverText>
         <p className="text-sm md:text-base font-medium mt-4 text-[#b5b0c3]">
           <span className="font-semibold text-[#ede8f5]">Services</span>
           <span> — Ranging from big ideas to fine details</span>
@@ -51,9 +53,9 @@ export default function ServicesSec() {
             onClick={() => setActiveTab("development")}
           >
             <AnimatedHoverText
-              className={`text-5xl md:text-6xl font-bold transition ${
-                activeTab === "development" ? "text-[#f1e6dd]" : "text-[#77758a]"
-              }`}
+            midColor="#4f46e5"
+              className={`text-5xl md:text-6xl font-bold transition ${activeTab === "development" ? "text-[#f1e6dd]" : "text-[#77758a]"
+                }`}
             >
               Development
             </AnimatedHoverText>
@@ -74,9 +76,9 @@ export default function ServicesSec() {
             onClick={() => setActiveTab("design")}
           >
             <AnimatedHoverText
-              className={`text-5xl md:text-6xl font-bold transition ${
-                activeTab === "design" ? "text-[#f1e6dd]" : "text-[#77758a]"
-              }`}
+            midColor="#4f46e5"
+              className={`text-5xl md:text-6xl font-bold transition ${activeTab === "design" ? "text-[#f1e6dd]" : "text-[#77758a]"
+                }`}
             >
               Design
             </AnimatedHoverText>

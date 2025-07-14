@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -63,6 +63,18 @@ export default function ProjectsSection() {
     }
   };
 
+  const LineRef = useRef(null);
+
+  const setLineRef = (el) => {
+    if (el) {
+      el.classList.remove("animate-grow");
+      // Force reflow
+      void el.offsetWidth;
+      el.classList.add("animate-grow");
+      LineRef.current = el;
+    }
+  };
+
   return (
     <AnimatedBgForPr>
       <div
@@ -106,9 +118,16 @@ export default function ProjectsSection() {
                   transition={{ duration: 0.6 }}
                   className="max-w-md"
                 >
-                  <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                    {projects[activeIndex].title}
-                  </h2>
+                  <div className="w-fit">
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-1" >
+                      {projects[activeIndex].title}
+                    </h2>
+                    <div
+                      ref={setLineRef}
+                      className="h-[6px] bg-gradient-to-r from-[#4f46e5] via-white to-[#4f46e5] w-0 mb-5 rounded-full"
+                    ></div>
+                  </div>
+
                   <p className="text-base sm:text-lg text-gray-300 mb-6">
                     {projects[activeIndex].description}
                   </p>

@@ -7,9 +7,11 @@ import {
   FaInstagram,
   FaTelegramPlane,
   FaTwitter,
+  FaWhatsapp,
 } from "react-icons/fa";
 import { db } from "../app/firebaseConfig";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import AnimatedButton from "./Buttton";
 
 export default function ContactSec() {
   const [success, setSuccess] = useState(false);
@@ -201,7 +203,7 @@ export default function ContactSec() {
     <section className="w-full h-full md:h-[93vh] mt-7 px-6 md:px-20 py-10 relative">
       <div className="text-center mb-12">
         <h1 className="text-white text-5xl sm:text-5xl md:text-6xl font-extrabold font-heading tracking-wider">
-          LET<span className="text-red-600">'</span>S TALK
+          LET<span className="text-[#4f46e5]">'</span>S TALK
         </h1>
       </div>
 
@@ -214,14 +216,14 @@ export default function ContactSec() {
 
           <div
             ref={leftLineRef}
-            className="h-[6px] bg-gradient-to-r from-red-600 via-white to-red-600 w-0 mb-5 rounded-full"
+            className="h-[6px] bg-gradient-to-r from-[#4f46e5] via-white to-[#4f46e5] w-0 mb-5 rounded-full"
           ></div>
 
           <div className="flex space-x-4 mt-1 mb-6">
             {[0, 200, 400].map((delay, index) => (
               <div
                 key={index}
-                className="w-3.5 h-3.5 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-600 animate-pulseCircle"
+                className="w-3.5 h-3.5 rounded-full bg-gradient-to-r from-[#4f46e5] to-[#4f46e5] animate-pulseCircle"
                 style={{ animationDelay: `${delay}ms` }}
               ></div>
             ))}
@@ -243,7 +245,7 @@ export default function ContactSec() {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-red-600"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 />
                 {errors.name && (
                   <span className="text-red-500 text-sm">{errors.name}</span>
@@ -253,7 +255,7 @@ export default function ContactSec() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-red-600"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 >
                   <option value="">Select a Service</option>
                   <option value="Web Design">Web Design</option>
@@ -274,7 +276,7 @@ export default function ContactSec() {
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-red-600"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 >
                   <option value="">Select Budget Range</option>
                   <option value="$100 - $500">$100 - $500</option>
@@ -296,7 +298,7 @@ export default function ContactSec() {
                   value={formData.instructions}
                   onChange={handleChange}
                   rows={3}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-red-600"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 ></textarea>
                 {errors.instructions && (
                   <span className="text-red-500 text-sm">
@@ -313,7 +315,7 @@ export default function ContactSec() {
                     name="countryCode"
                     value={formData.countryCode}
                     onChange={handleChange}
-                    className="w-[35%] px-3 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-red-600"
+                    className="w-[35%] px-3 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                   >
                     <option value="">Code</option>
                     {countryData.map((c) => (
@@ -329,7 +331,7 @@ export default function ContactSec() {
                     placeholder="3211234567"
                     value={formData.contactNumber}
                     onChange={handleChange}
-                    className="w-[65%] px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-red-600"
+                    className="w-[65%] px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                   />
                 </div>
                 {errors.contactNumber && (
@@ -342,7 +344,7 @@ export default function ContactSec() {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-red-600"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 />
                 {errors.email && (
                   <span className="text-red-500 text-sm">{errors.email}</span>
@@ -352,19 +354,13 @@ export default function ContactSec() {
 
             <div className="mt-6 flex justify-between">
               {step > 1 && (
-                <button
-                  onClick={handlePrev}
-                  className="px-6 py-2 rounded-full border border-white text-white hover:text-red-600 transition duration-300"
-                >
+                <AnimatedButton onClick={handlePrev}>
                   Previous
-                </button>
+                </AnimatedButton>
               )}
-              <button
-                onClick={step < 3 ? handleNext : handleSubmit}
-                className="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-full text-white transition duration-300 ml-auto"
-              >
+              <AnimatedButton onClick={step < 3 ? handleNext : handleSubmit} className="ml-auto">
                 {step < 3 ? "Next" : "Submit"}
-              </button>
+              </AnimatedButton>
             </div>
 
             {success && (
@@ -385,14 +381,14 @@ export default function ContactSec() {
               <h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
                 WEB
               </h2>
-              <h2 className="text-red-600 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+              <h2 className="text-[#4f46e5] text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
                 HOME
               </h2>
             </div>
 
             <div
               ref={rightLineRef}
-              className="h-[6px] bg-gradient-to-r from-red-600 via-white to-red-600 w-0 mt-2 rounded-full"
+              className="h-[6px] bg-gradient-to-r from-[#4f46e5] via-white to-[#4f46e5] w-0 mt-2 rounded-full"
             ></div>
           </div>
 
@@ -406,15 +402,15 @@ export default function ContactSec() {
           <div className="mt-6 flex justify-between items-center w-full">
             <button
               onClick={() => router.push("/discover")}
-              className="text-white px-8 py-2 rounded-full text-lg sm:text-xl hover:text-red-600 transition-all duration-300"
+              className="text-white px-8 py-2 rounded-full text-lg sm:text-xl hover:text-[#4f46e5] transition-all duration-300"
             >
 
             </button>
 
             <div className="group relative hidden md:block">
               <button
-                onClick={() => router.push("/email")}
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 text-white text-xl hover:animate-bounceUp transition-all duration-300 shadow-lg"
+                href="mailto:hexalogicedge@gmail.com"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-[#4f46e5] text-white text-xl hover:animate-bounceUp transition-all duration-300 shadow-lg"
               >
                 ✏
               </button>
@@ -430,37 +426,37 @@ export default function ContactSec() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-red-500 transition-all duration-300 hover:scale-110"
+              className="text-white hover:text-[#4f46e5] transition-all duration-300 hover:scale-110"
             >
               <FaFacebookF className="text-[22px]" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/hexalogicedge_?igsh=ZTUzenJpb3p2d3cz"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-red-500 transition-all duration-300 hover:scale-110"
+              className="text-white hover:text-[#4f46e5] transition-all duration-300 hover:scale-110"
             >
               <FaInstagram className="text-[22px]" />
             </a>
             <a
-              href="https://twitter.com"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-red-500 transition-all duration-300 hover:scale-110"
+              className="text-white hover:text-[#4f46e5] transition-all duration-300 hover:scale-110"
             >
               <FaTwitter className="text-[22px]" />
             </a>
             <a
-              href="https://t.me"
+              href="https://wa.me/923001234567?text=Hi%2C%20I%27m%20interested%20in%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-red-500 transition-all duration-300 hover:scale-110"
+              className="text-white hover:text-[#4f46e5] transition-all duration-300 hover:scale-110"
             >
-              <FaTelegramPlane className="text-[22px]" />
+              <FaWhatsapp className="text-[22px]" />
             </a>
           </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }

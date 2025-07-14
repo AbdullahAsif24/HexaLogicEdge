@@ -12,6 +12,8 @@ import { db } from "../app/firebaseConfig";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function ContactSec() {
+  const [success, setSuccess] = useState(false);
+
   const router = useRouter();
   const leftLineRef = useRef(null);
   const rightLineRef = useRef(null);
@@ -82,8 +84,12 @@ export default function ContactSec() {
       try {
         await addDoc(collection(db, "contacts"), fullData);
 
-        alert("Form submitted successfully!");
+        console.log("Form submitted successfully!");
         setSubmittedData(fullData);
+        setSuccess(true); // ✅ Show success message
+
+        setTimeout(() => setSuccess(false), 5000); // Hide after 5 sec
+
         setFormData({
           name: "",
           service: "",
@@ -97,8 +103,9 @@ export default function ContactSec() {
         setErrors({});
       } catch (error) {
         console.error("Error submitting to Firestore:", error);
-        alert("Failed to submit the form.");
+        console.log("Failed to submit the form.");
       }
+
     } else {
       setErrors(currentErrors);
     }
@@ -359,6 +366,12 @@ export default function ContactSec() {
                 {step < 3 ? "Next" : "Submit"}
               </button>
             </div>
+
+            {success && (
+              <p className="mt-4 text-green-400 text-center text-sm sm:text-base">
+                ✅ Your message has been submitted successfully!
+              </p>
+            )}
           </div>
         </div>
 

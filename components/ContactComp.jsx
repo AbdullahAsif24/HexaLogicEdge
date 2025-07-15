@@ -200,37 +200,37 @@ export default function ContactSec() {
 
 
   return (
-    <section className="w-full h-full md:h-[93vh] mt-7 px-6 md:px-20 py-10 relative">
+    <section className="w-full h-full md:h-screen md:pt-24 pt-20 mt-7 px-6 md:px-20 py-10 relative">
       <div className="text-center mb-12">
-        <h1 className="text-white text-5xl sm:text-5xl md:text-6xl font-extrabold font-heading tracking-wider">
-          LET<span className="text-[#4f46e5]">'</span>S TALK
+        <h1 className="text-softBrown text-4xl sm:text-5xl md:text-6xl font-extrabold font-heading tracking-wider">
+          LET<span className="text-textDark">'</span>S TALK
         </h1>
       </div>
 
       <div className="flex flex-col md:flex-row items-start justify-between gap-16 md:gap-10">
         {/* LEFT SIDE */}
         <div className="flex-1 flex flex-col items-start justify-start w-full">
-          <h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 tracking-tight">
+          <h2 className="text-softBrown text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 tracking-tight">
             CREATIVE
           </h2>
 
           <div
             ref={leftLineRef}
-            className="h-[6px] bg-gradient-to-r from-[#4f46e5] via-white to-[#4f46e5] w-0 mb-5 rounded-full"
+            className="h-[6px] bg-gradient-to-r from-richBlack via-softBrown to-warmBeige w-0 mb-5 rounded-full"
           ></div>
 
           <div className="flex space-x-4 mt-1 mb-6">
             {[0, 200, 400].map((delay, index) => (
               <div
                 key={index}
-                className="w-3.5 h-3.5 rounded-full bg-gradient-to-r from-[#4f46e5] to-[#4f46e5] animate-pulseCircle"
+                className="w-3.5 h-3.5 rounded-full bg-gradient-to-r from-richBlack to-warmBeige animate-pulseCircle"
                 style={{ animationDelay: `${delay}ms` }}
               ></div>
             ))}
           </div>
 
           <div
-            className={`w-full max-w-md text-white transform transition duration-300 ${transitioning ? "opacity-0 translate-x-10" : "opacity-100 translate-x-0"
+            className={`w-full max-w-md text-softBrown transform transition duration-300 ${transitioning ? "opacity-0 translate-x-10" : "opacity-100 translate-x-0"
               }`}
           >
             <h3 className="text-center text-xl sm:text-2xl mb-6 font-bold">
@@ -245,7 +245,7 @@ export default function ContactSec() {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 />
                 {errors.name && (
                   <span className="text-red-500 text-sm">{errors.name}</span>
@@ -255,7 +255,7 @@ export default function ContactSec() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 >
                   <option value="">Select a Service</option>
                   <option value="Web Design">Web Design</option>
@@ -276,7 +276,7 @@ export default function ContactSec() {
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 >
                   <option value="">Select Budget Range</option>
                   <option value="$100 - $500">$100 - $500</option>
@@ -298,7 +298,7 @@ export default function ContactSec() {
                   value={formData.instructions}
                   onChange={handleChange}
                   rows={3}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 ></textarea>
                 {errors.instructions && (
                   <span className="text-red-500 text-sm">
@@ -331,7 +331,7 @@ export default function ContactSec() {
                     placeholder="3211234567"
                     value={formData.contactNumber}
                     onChange={handleChange}
-                    className="w-[65%] px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                    className="w-[65%] px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                   />
                 </div>
                 {errors.contactNumber && (
@@ -344,7 +344,7 @@ export default function ContactSec() {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
                 />
                 {errors.email && (
                   <span className="text-red-500 text-sm">{errors.email}</span>
@@ -372,27 +372,27 @@ export default function ContactSec() {
         </div>
 
         {/* Divider */}
-        <div className="hidden md:block w-[2px] bg-white h-auto self-stretch mx-6" />
+        <div className="hidden md:block w-[2px] bg-textDark h-auto self-stretch mx-6" />
 
         {/* RIGHT SIDE */}
         <div className="flex-1 flex flex-col gap-6">
           <div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-              <h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+            <div className="flex flex-row sm:flex-row sm:items-center gap-4 sm:gap-8">
+              <h2 className="text-softBrown text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
                 WEB
               </h2>
-              <h2 className="text-[#4f46e5] text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+              <h2 className="text-textDark text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
                 HOME
               </h2>
             </div>
 
             <div
               ref={rightLineRef}
-              className="h-[6px] bg-gradient-to-r from-[#4f46e5] via-white to-[#4f46e5] w-0 mt-2 rounded-full"
+              className="h-[6px] bg-gradient-to-r from-richBlack via-softBrown to-warmBeige w-0 mt-2 rounded-full"
             ></div>
           </div>
 
-          <p className="text-white text-base sm:text-lg leading-relaxed mt-2">
+          <p className="text-textMuted text-base sm:text-lg leading-relaxed mt-2">
             We’d love to hear from you! Whether you have a project in mind, a
             question about our services, or just want to say hello, our team is
             ready to help. Reach out today and let’s start building something
@@ -402,7 +402,7 @@ export default function ContactSec() {
           <div className="mt-6 flex justify-between items-center w-full">
             <button
               onClick={() => router.push("/discover")}
-              className="text-white px-8 py-2 rounded-full text-lg sm:text-xl hover:text-[#4f46e5] transition-all duration-300"
+              className="text-textMuted px-8 py-2 rounded-full text-lg sm:text-xl hover:text-textDark transition-all duration-300"
             >
 
             </button>
@@ -410,7 +410,7 @@ export default function ContactSec() {
             <div className="group relative hidden md:block">
               <button
                 href="mailto:hexalogicedge@gmail.com"
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-[#4f46e5] text-white text-xl hover:animate-bounceUp transition-all duration-300 shadow-lg"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-richBlack text-white text-xl hover:animate-bounceUp transition-all duration-300 shadow-lg"
               >
                 ✏
               </button>
@@ -426,7 +426,7 @@ export default function ContactSec() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-[#4f46e5] transition-all duration-300 hover:scale-110"
+              className="text-richBlack hover:text-softBrown transition-all duration-300 hover:scale-110"
             >
               <FaFacebookF className="text-[22px]" />
             </a>
@@ -434,7 +434,7 @@ export default function ContactSec() {
               href="https://www.instagram.com/hexalogicedge_?igsh=ZTUzenJpb3p2d3cz"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-[#4f46e5] transition-all duration-300 hover:scale-110"
+              className="text-richBlack hover:text-softBrown transition-all duration-300 hover:scale-110"
             >
               <FaInstagram className="text-[22px]" />
             </a>
@@ -442,7 +442,7 @@ export default function ContactSec() {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-[#4f46e5] transition-all duration-300 hover:scale-110"
+              className="text-richBlack hover:text-softBrown transition-all duration-300 hover:scale-110"
             >
               <FaTwitter className="text-[22px]" />
             </a>
@@ -450,7 +450,7 @@ export default function ContactSec() {
               href="https://wa.me/923001234567?text=Hi%2C%20I%27m%20interested%20in%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-[#4f46e5] transition-all duration-300 hover:scale-110"
+              className="text-richBlack hover:text-softBrown transition-all duration-300 hover:scale-110"
             >
               <FaWhatsapp className="text-[22px]" />
             </a>

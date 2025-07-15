@@ -7,9 +7,9 @@ import SplitType from 'split-type';
 const AnimatedHoverText = ({
   children,
   className = '',
-  startColor = '#ffffff',
-  midColor = '#000000',
-  endColor = '#ffffff'
+  startColor = '#bba891',   // warmBeige
+  midColor = '#f7f4ef',     // linen
+  endColor = '#bba891'      // warmBeige again for return
 }) => {
   const textRef = useRef(null);
   const charsRef = useRef([]);

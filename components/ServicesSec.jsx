@@ -25,73 +25,63 @@ export default function ServicesSec() {
   const [activeTab, setActiveTab] = useState("development");
 
   return (
-    <div className="min-h-[90vh] md:min-h-[97vh] px-6 md:px-20 py-20 font-sans text-[#ede8f5]">
-      {/* Top Heading */}
+    <div className="h-auto md:h-screen px-6 md:px-20 py-20 bg-linen text-textDark font-sans">
+      {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="mb-10 text-center"
       >
-        <AnimatedHoverText midColor="#1e2235">
-          <h2 className="text-4xl md:text-7xl font-bold">What we do</h2>
+        <AnimatedHoverText
+          startColor="#7a6c5d"
+          midColor="#1c1c1c"
+          endColor="#7a6c5d"
+        >
+          <h2 className="text-4xl md:text-7xl font-bold text-softBrown">
+            What we do
+          </h2>
         </AnimatedHoverText>
-        <p className="text-sm md:text-base font-medium mt-4 text-[#b5b0c3]">
-          <span className="font-semibold text-[#ede8f5]">Services</span>
+
+        <p className="text-sm md:text-base font-medium mt-4 text-softBrown">
+          <span className="font-semibold text-warmBeige">Services</span>
           <span> — Ranging from big ideas to fine details</span>
         </p>
-        <hr className="mt-4 border-[#d9cec6]" />
+
+        <hr className="mt-4 border-stone" />
       </motion.div>
 
-      {/* Layout: Left Tabs & Right List */}
+      {/* Tabs and List */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Tabs */}
         <div className="space-y-10">
-          {/* Development Tab */}
-          <div
-            className="relative cursor-pointer w-fit"
-            onClick={() => setActiveTab("development")}
-          >
-            <AnimatedHoverText
-            midColor="#4f46e5"
-              className={`text-5xl md:text-6xl font-bold transition ${activeTab === "development" ? "text-[#f1e6dd]" : "text-[#77758a]"
-                }`}
+          {["development", "design"].map((tab) => (
+            <div
+              key={tab}
+              className="relative cursor-pointer w-fit"
+              onClick={() => setActiveTab(tab)}
             >
-              Development
-            </AnimatedHoverText>
-
-            <div className="h-[6px] mt-1 relative">
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: activeTab === "development" ? 1 : 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="origin-left absolute left-0 bottom-0 h-[6px] w-full bg-[#a5b4fc] rounded-full"
-              />
-            </div>
-          </div>
-
-          {/* Design Tab */}
-          <div
-            className="relative cursor-pointer w-fit"
-            onClick={() => setActiveTab("design")}
-          >
-            <AnimatedHoverText
-            midColor="#4f46e5"
-              className={`text-5xl md:text-6xl font-bold transition ${activeTab === "design" ? "text-[#f1e6dd]" : "text-[#77758a]"
+              <AnimatedHoverText
+                startColor="#7a6c5d"
+                endColor="#bba891"
+                midColor="#1c1c1c"
+                className={`text-5xl md:text-6xl font-bold transition ${
+                  activeTab === tab ? "text-textDark" : "text-textMuted"
                 }`}
-            >
-              Design
-            </AnimatedHoverText>
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </AnimatedHoverText>
 
-            <div className="h-[6px] mt-1 relative">
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: activeTab === "design" ? 1 : 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="origin-left absolute left-0 bottom-0 h-[6px] w-full bg-[#a5b4fc] rounded-full"
-              />
+              <div className="h-[6px] mt-1 relative">
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: activeTab === tab ? 1 : 0 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="origin-left absolute left-0 bottom-0 h-[6px] w-full bg-warmBeige rounded-full"
+                />
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
         {/* Services List */}
@@ -112,11 +102,14 @@ export default function ServicesSec() {
                 <motion.li
                   key={item}
                   className="flex items-start"
-                  initial={{ opacity: 0, x: activeTab === "design" ? -20 : 20 }}
+                  initial={{
+                    opacity: 0,
+                    x: activeTab === "design" ? -20 : 20,
+                  }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 + index * 0.05 }}
                 >
-                  <span className="text-[#4f46e5] mr-3 text-lg">✦</span>
+                  <span className="text-softBrown mr-3 text-lg">✦</span>
                   {item}
                 </motion.li>
               ))}

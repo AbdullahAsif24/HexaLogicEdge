@@ -4,10 +4,7 @@ import Navbar from "@/components/Navbar";
 export default function OthersRootLayout({ children }) {
     return (
         <>
-            <Navbar />
-            <AnimatedBg>
                 {children}
-            </AnimatedBg>
         </>
 
     );

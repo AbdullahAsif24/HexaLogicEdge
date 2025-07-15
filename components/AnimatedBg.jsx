@@ -33,11 +33,10 @@ const AnimatedBg = ({ children }) => {
       className="
         relative
         h-auto
-    overflow-hidden
-    bg-[#1e2235] text-[#ede8f5]
-    font-sans md:rounded-lg md:m-2
-    flex flex-col
-    scrollbar-hide
+        bg-richBlack text-linen
+        font-sans
+        flex flex-col
+        scrollbar-hide
       "
     >
       {/* Animated SVG Background */}
@@ -47,14 +46,34 @@ const AnimatedBg = ({ children }) => {
         viewBox="0 0 800 600"
         preserveAspectRatio="xMidYMid slice"
       >
-        <polygon ref={(el) => (polyRefs.current[0] = el)} points="0,0 300,100 200,400 0,300" fill="#4f46e5" fillOpacity="0.3" />
-        <polygon ref={(el) => (polyRefs.current[1] = el)} points="800,0 600,150 650,450 800,400" fill="#a5b4fc" fillOpacity="0.25" />
-        <polygon ref={(el) => (polyRefs.current[2] = el)} points="400,600 550,400 700,600" fill="#4338ca" fillOpacity="0.35" />
-        <polygon ref={(el) => (polyRefs.current[3] = el)} points="0,500 150,350 350,600" fill="#818cf8" fillOpacity="0.2" />
+        <polygon
+          ref={(el) => (polyRefs.current[0] = el)}
+          points="0,0 300,100 200,400 0,300"
+          fill="#7a6c5d" // softBrown
+          fillOpacity="0.3"
+        />
+        <polygon
+          ref={(el) => (polyRefs.current[1] = el)}
+          points="800,0 600,150 650,450 800,400"
+          fill="#bba891" // warmBeige
+          fillOpacity="0.25"
+        />
+        <polygon
+          ref={(el) => (polyRefs.current[2] = el)}
+          points="400,600 550,400 700,600"
+          fill="#948e88" // muted
+          fillOpacity="0.35"
+        />
+        <polygon
+          ref={(el) => (polyRefs.current[3] = el)}
+          points="0,500 150,350 350,600"
+          fill="#d6cdc4" // stone
+          fillOpacity="0.2"
+        />
       </svg>
 
-      {/* Scrollable content with padding inside rounded box */}
-      <div className="relative z-10 w-full md:rounded-lg">
+      {/* Scrollable content */}
+      <div className="relative z-10 w-full">
         {children}
       </div>
     </div>

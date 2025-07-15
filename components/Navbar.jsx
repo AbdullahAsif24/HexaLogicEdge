@@ -79,23 +79,29 @@ export default function Navbar() {
         "
       >
         {/* Logo */}
-        <div className="flex items-center gap-2 text-xl font-semibold tracking-wide">
-          <span className="text-indigo-600 dark:text-teal-400">🔷</span>
-          Hexalogic
-        </div>
+        <Link href="/" className="flex items-center gap-1">
+          <img
+            src="/another-logo-without-bg.png" // Replace with your actual image path
+            alt="Hexalogic Logo"
+            className="w-8 h-8 object-contain"
+          />
+          <span className="text-xl font-semibold tracking-wide text-gray-900 dark:text-white">
+            Hexalogic
+          </span>
+        </Link>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 items-center font-medium text-[15px]">
           {["Home", "Services", "Work", "Contact"].map((link) => (
 
             <Link href={`/${link.toLowerCase()}`} key={link}>
-            <li
-              onClick={handleLinkClick}
-              className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
-            >
-              {link}
+              <li
+                onClick={handleLinkClick}
+                className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
+              >
+                {link}
 
-            </li>
+              </li>
 
             </Link>
           ))}
@@ -108,7 +114,7 @@ export default function Navbar() {
         >
           {menuOpen ? "✕" : "☰"}
         </button>
-      </nav> 
+      </nav>
 
       {/* Mobile Menu */}
       <div
@@ -127,14 +133,14 @@ export default function Navbar() {
           {["Home", "Services", "Work", "Contact"].map((link) => (
 
             <Link href={`/${link.toLowerCase()}`} key={link}>
-            <li
+              <li
 
-              onClick={handleLinkClick}
-              className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
-            >
-              {link}
+                onClick={handleLinkClick}
+                className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
+              >
+                {link}
 
-            </li>
+              </li>
 
             </Link>
           ))}

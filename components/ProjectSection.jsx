@@ -12,18 +12,18 @@ const projects = [
   {
     title: "Caffeine Empire",
     description:
-      "An intelligent assistant built to automate conversations and enhance user engagement.",
+      "A sleek and responsive coffee eCommerce website built to deliver premium coffee experiences online.",
     image: "/web1.png",
     link: "",
-    technologies: ["React", "Node.js", "MongoDB"],
+    technologies: ["Html", "Css", "Js", "Bootstrap", "J-Query"],
   },
   {
-    title: "Ecommerce",
+    title: "Auctions-Table",
     description:
-      "A sleek, high-performance store built for modern shopping experiences.",
-    image: "/img2.jpg",
+      "An elegant and responsive website showcasing handcrafted furniture and artistic paintings, designed to blend aesthetics with usability.",
+    image: "/web2.png",
     link: "",
-    technologies: ["Next.js", "Tailwind CSS", "Stripe", "Firebase"],
+    technologies: ["Html", "Css", "Js", "Bootstrap", "J-Query"],
   },
   {
     title: "WordPress",

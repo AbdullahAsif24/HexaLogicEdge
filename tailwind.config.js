@@ -8,19 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        lightBackground: "#F7F8FC",
-        darkBackground: "#111827",
-        lightSurface: "#FFFFFF",
-        darkSurface: "#1F2937",
-        lightTextPrimary: "#111827",
-        darkTextPrimary: "#F9FAFB",
-        lightTextSecondary: "#374151",
-        darkTextSecondary: "#9CA3AF",
-        primary: "#4F46E5", // violet
-        primaryDark: "#3730A3",
-        accent: "#22D3EE", // cyan
-        accentDark: "#0E7490",
-        buttonHover: "#3730A3",
+        richBlack: "#0b0c10",
+        linen: "#f7f4ef",
+        stone: "#d6cdc4",
+        warmBeige: "#bba891",
+        softBrown: "#7a6c5d",
+        textMuted: "#948e88",
+        textDark: "#1c1c1c",
+        
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

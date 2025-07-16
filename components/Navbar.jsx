@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
@@ -17,7 +17,6 @@ export default function Navbar() {
       setIsDark(true);
     }
 
-    // Navbar entrance animation
     gsap.fromTo(
       navRef.current,
       { y: -80, opacity: 0 },
@@ -70,47 +69,45 @@ export default function Navbar() {
         ref={navRef}
         className="
           fixed top-3 left-1/2 transform -translate-x-1/2
-    w-[89%] sm:w-[85%] md:w-[70%] max-w-5xl
-    bg-[#fff] dark:bg-[#111827]
-    text-gray-900 dark:text-white
-    rounded-full px-5 py-2
-    flex justify-between items-center
-    shadow-xl z-50 backdrop-blur-xl bg-opacity-90 border border-gray-100 dark:border-gray-700
+          w-[89%] sm:w-[85%] md:w-[70%] max-w-5xl
+          bg-warmBeige text-richBlack
+          rounded-full px-5 py-2
+          flex justify-between items-center
+          shadow-xl z-50 backdrop-blur-xl bg-opacity-90 border border-warmBeige/20
         "
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1">
-          <img
-            src="/another-logo-without-bg.png" // Replace with your actual image path
+        <a href="#home" className="flex items-center gap-1">
+          <Image
+            src="/HL-logo-bg-remove.png"
             alt="Hexalogic Logo"
-            className="w-8 h-8 object-contain"
+            className="object-contain"
+            width={25}
+            height={25}
           />
-          <span className="text-xl font-semibold tracking-wide text-gray-900 dark:text-white">
+          <span className="text-xl font-semibold tracking-wide text-richBlack">
             Hexalogic
           </span>
-        </Link>
+        </a>  
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 items-center font-medium text-[15px]">
           {["Home", "Services", "Work", "Contact"].map((link) => (
-
-            <Link href={`/${link.toLowerCase()}`} key={link}>
+            <a href={`#${link.toLowerCase()}`} key={link}>
               <li
                 onClick={handleLinkClick}
-                className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
+                className="cursor-pointer hover:text-linen transition"
               >
                 {link}
-
               </li>
-
-            </Link>
+            </a>
           ))}
         </ul>
 
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-3xl text-gray-800 dark:text-white"
+          className="md:hidden text-3xl text-richBlack"
         >
           {menuOpen ? "✕" : "☰"}
         </button>
@@ -122,34 +119,29 @@ export default function Navbar() {
         className={`
           fixed top-20 left-1/2 transform -translate-x-1/2
           w-[89%] sm:w-[85%] md:w-[70%] max-w-5xl
-          bg-[#fff] dark:bg-[#111827]
-          text-gray-900 dark:text-white
+          bg-warmBeige text-richBlack
           rounded-2xl p-6 shadow-2xl z-40
-          border border-gray-100 dark:border-gray-700
+          border border-warmBeige/20
           ${menuOpen ? "block" : "hidden"}
         `}
       >
         <ul className="flex flex-col gap-5 text-center font-medium text-[16px]">
           {["Home", "Services", "Work", "Contact"].map((link) => (
-
-            <Link href={`/${link.toLowerCase()}`} key={link}>
+            <a href={`#${link.toLowerCase()}`} key={link}>
               <li
-
                 onClick={handleLinkClick}
-                className="cursor-pointer hover:text-indigo-600 dark:hover:text-teal-400 transition"
+                className="cursor-pointer hover:text-linen transition"
               >
                 {link}
-
               </li>
-
-            </Link>
+            </a>
           ))}
 
-          {/* Uncomment to enable theme toggle */}
+          {/* Optional Theme Toggle */}
           {/* <li>
             <button
               onClick={toggleTheme}
-              className="mt-4 w-full bg-indigo-600 dark:bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-indigo-700 dark:hover:bg-teal-600"
+              className="mt-4 w-full bg-warmBeige text-richBlack px-4 py-2 rounded-full hover:bg-linen"
             >
               {isDark ? "Light Mode" : "Dark Mode"}
             </button>

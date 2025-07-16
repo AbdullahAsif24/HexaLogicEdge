@@ -141,7 +141,7 @@ export default function ProjectsSection() {
                 </p>
 
                 {/* Technologies (No Icons) */}
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-6">
+                <div className="hidden md:flex flex-wrap gap-2 justify-center md:justify-start mb-6">
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}

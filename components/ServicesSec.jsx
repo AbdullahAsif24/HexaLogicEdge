@@ -25,6 +25,7 @@ export default function ServicesSec() {
   const [activeTab, setActiveTab] = useState("development");
 
   return (
+    <section id="services">
     <div className="h-auto md:h-screen px-6 md:px-20 py-20 bg-linen text-textDark font-sans">
       {/* Heading */}
       <motion.div
@@ -118,5 +119,6 @@ export default function ServicesSec() {
         </div>
       </div>
     </div>
+    </section>
   );
 }

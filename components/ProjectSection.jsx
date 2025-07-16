@@ -105,6 +105,7 @@ export default function ProjectsSection() {
     <section
       ref={sectionRef}
       className="h-screen w-full overflow-x-hidden relative bg-richBlack text-linen"
+      id="work"
     >
       {/* Section Heading */}
       <div className="absolute top-0 left-0 w-full z-10 pt-20 md:pt-24 px-4 sm:px-10 text-center pointer-events-none">

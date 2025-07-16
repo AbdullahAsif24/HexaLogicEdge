@@ -200,7 +200,7 @@ export default function ContactSec() {
 
 
   return (
-    <section className="w-full h-full md:h-screen md:pt-24 pt-20 mt-7 px-6 md:px-20 py-10 relative">
+    <section className="w-full h-full md:h-screen md:pt-24 pt-20 mt-7 px-6 md:px-20 py-10 relative" id="contact">
       <div className="text-center mb-12">
         <h1 className="text-softBrown text-4xl sm:text-5xl md:text-6xl font-extrabold font-heading tracking-wider">
           LET<span className="text-textDark">'</span>S TALK

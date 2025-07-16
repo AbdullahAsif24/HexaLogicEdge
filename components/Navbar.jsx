@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
@@ -77,28 +77,30 @@ export default function Navbar() {
         "
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1">
-          <img
-            src="/another-logo-without-bg.png"
+        <a href="#home" className="flex items-center gap-1">
+          <Image
+            src="/HL-logo-bg-remove.png"
             alt="Hexalogic Logo"
-            className="w-8 h-8 object-contain"
+            className="object-contain"
+            width={25}
+            height={25}
           />
           <span className="text-xl font-semibold tracking-wide text-richBlack">
             Hexalogic
           </span>
-        </Link>
+        </a>  
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 items-center font-medium text-[15px]">
           {["Home", "Services", "Work", "Contact"].map((link) => (
-            <Link href={`/${link.toLowerCase()}`} key={link}>
+            <a href={`#${link.toLowerCase()}`} key={link}>
               <li
                 onClick={handleLinkClick}
                 className="cursor-pointer hover:text-linen transition"
               >
                 {link}
               </li>
-            </Link>
+            </a>
           ))}
         </ul>
 
@@ -125,14 +127,14 @@ export default function Navbar() {
       >
         <ul className="flex flex-col gap-5 text-center font-medium text-[16px]">
           {["Home", "Services", "Work", "Contact"].map((link) => (
-            <Link href={`/${link.toLowerCase()}`} key={link}>
+            <a href={`#${link.toLowerCase()}`} key={link}>
               <li
                 onClick={handleLinkClick}
                 className="cursor-pointer hover:text-linen transition"
               >
                 {link}
               </li>
-            </Link>
+            </a>
           ))}
 
           {/* Optional Theme Toggle */}

@@ -1,12 +1,6 @@
-import { Poppins } from "next/font/google";
-import '../styles/globals.css';
-import AnimatedBg from "@/components/AnimatedBg";
-import Navbar from "@/components/Navbar";
 
-const poppins = Poppins({
-  weight: ["400", "600"],
-  subsets: ["latin"],
-});
+import '../styles/globals.css';
+
 
 export const metadata = {
   title: "Hexalogic",
@@ -15,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body >
 
           {children}
 

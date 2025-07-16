@@ -122,7 +122,8 @@ export default function ProjectsSection() {
             ref={(el) => (slideRefs.current[i] = el)}
             className="project-slide w-screen h-screen relative flex items-center justify-center px-4 sm:px-10"
           >
-            <div className="flex flex-col md:flex-row items-center gap-10 max-w-7xl mx-auto w-full pt-28 md:pt-36">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto w-full min-h-[650px] sm:min-h-[700px] md:min-h-0 pt-28 md:pt-36">
+
               <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] flex-shrink-0 rounded-xl overflow-hidden shadow-xl">
                 <Image
                   src={project.image}

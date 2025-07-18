@@ -262,7 +262,6 @@ export default function ContactSec() {
                   <option value="Web Development">Web Development</option>
                   <option value="E-commerce">E-commerce</option>
                   <option value="SEO">SEO</option>
-                  <option value="Branding">Branding</option>
                 </select>
                 {errors.service && (
                   <span className="text-red-500 text-sm">{errors.service}</span>
@@ -311,24 +310,34 @@ export default function ContactSec() {
             {step === 3 && (
               <div className="flex flex-col gap-4">
                 <div className="flex gap-2">
-                  <select
-                    name="countryCode"
-                    value={formData.countryCode}
-                    onChange={handleChange}
-                    className="w-[35%] px-3 py-2 rounded bg-darkSurface text-white border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
-                  >
-                    <option value="">Code</option>
-                    {countryData.map((c) => (
-                      <option key={c.code} value={c.code}>
-                        {c.name} ({c.code})
-                      </option>
-                    ))}
-                  </select>
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      name="countryCode"
+                      value={formData.countryCode}
+                      onChange={handleChange}
+                      placeholder="Custom Code"
+                      className="w-[35%] px-3 py-2 rounded bg-darkSurface border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                    />
+                    <select
+                      name="countryCode"
+                      value={formData.countryCode}
+                      onChange={handleChange}
+                      className="w-[65%] px-3 py-2 rounded bg-darkSurface border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                    >
+                      <option value="">Code</option>
+                      {countryData.map((c) => (
+                        <option key={c.code} value={c.code}>
+                          {c.name} ({c.code})
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
                   <input
                     type="text"
                     name="contactNumber"
-                    placeholder="3211234567"
+                    placeholder="3153573231"
                     value={formData.contactNumber}
                     onChange={handleChange}
                     className="w-[65%] px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"

@@ -409,20 +409,21 @@ export default function ContactSec() {
           </p>
 
           <div className="mt-6 flex justify-between items-center w-full">
-            <button
-              onClick={() => router.push("/discover")}
-              className="text-textMuted px-8 py-2 rounded-full text-lg sm:text-xl hover:text-textDark transition-all duration-300"
+            <a
+              href="https://wa.me/+923153573231?text=Hi%2C%20I%27m%20interested%20in%20your%20services."
+              target="_blank"
+              className="text-textMuted py-2 rounded-full text-lg sm:text-xl hover:text-textDark transition-all duration-300"
             >
-
-            </button>
+              Get in Touch
+            </a>
 
             <div className="group relative hidden md:block">
-              <button
+              <a
                 href="mailto:hexalogicedge@gmail.com"
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-richBlack text-white text-xl hover:animate-bounceUp transition-all duration-300 shadow-lg"
               >
                 ✏
-              </button>
+              </a>
               <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1 rounded bg-white text-black text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap">
                 email-us
               </span>
@@ -456,7 +457,7 @@ export default function ContactSec() {
               <FaTwitter className="text-[22px]" />
             </a>
             <a
-              href="https://wa.me/923001234567?text=Hi%2C%20I%27m%20interested%20in%20your%20services."
+              href="https://wa.me/+923153573231?text=Hi%2C%20I%27m%20interested%20in%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="text-richBlack hover:text-softBrown transition-all duration-300 hover:scale-110"

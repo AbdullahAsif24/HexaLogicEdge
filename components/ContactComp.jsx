@@ -245,7 +245,7 @@ export default function ContactSec() {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-gray-600"
                 />
                 {errors.name && (
                   <span className="text-red-500 text-sm">{errors.name}</span>
@@ -255,7 +255,7 @@ export default function ContactSec() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-gray-600"
                 >
                   <option value="">Select a Service</option>
                   <option value="Web Design">Web Design</option>
@@ -275,7 +275,7 @@ export default function ContactSec() {
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-gray-600"
                 >
                   <option value="">Select Budget Range</option>
                   <option value="$100 - $500">$100 - $500</option>
@@ -297,7 +297,7 @@ export default function ContactSec() {
                   value={formData.instructions}
                   onChange={handleChange}
                   rows={3}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-gray-600"
                 ></textarea>
                 {errors.instructions && (
                   <span className="text-red-500 text-sm">
@@ -316,22 +316,17 @@ export default function ContactSec() {
                       name="countryCode"
                       value={formData.countryCode}
                       onChange={handleChange}
-                      placeholder="Custom Code"
-                      className="w-[35%] px-3 py-2 rounded bg-darkSurface border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                      placeholder="Code (+92)"
+                      list="countryCodes"
+                      className="w-full px-4 py-2 rounded bg-darkSurface border border-gray-500 focus:outline-none focus:border-gray-600"
                     />
-                    <select
-                      name="countryCode"
-                      value={formData.countryCode}
-                      onChange={handleChange}
-                      className="w-[65%] px-3 py-2 rounded bg-darkSurface border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
-                    >
-                      <option value="">Code</option>
+                    <datalist id="countryCodes">
                       {countryData.map((c) => (
                         <option key={c.code} value={c.code}>
                           {c.name} ({c.code})
                         </option>
                       ))}
-                    </select>
+                    </datalist>
                   </div>
 
                   <input
@@ -340,7 +335,7 @@ export default function ContactSec() {
                     placeholder="3153573231"
                     value={formData.contactNumber}
                     onChange={handleChange}
-                    className="w-[65%] px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                    className="w-[65%] px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-gray-600"
                   />
                 </div>
                 {errors.contactNumber && (
@@ -353,7 +348,7 @@ export default function ContactSec() {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-[#4f46e5]"
+                  className="w-full px-4 py-2 rounded bg-darkSurface text-textDark border border-gray-500 focus:outline-none focus:border-gray-600"
                 />
                 {errors.email && (
                   <span className="text-red-500 text-sm">{errors.email}</span>

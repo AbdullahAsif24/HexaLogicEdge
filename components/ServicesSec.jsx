@@ -19,6 +19,8 @@ const developmentServices = [
   "API Integrations",
   "Performance Optimization",
   "Ongoing Support",
+  "Automation",
+  "Chatbots",
 ];
 
 export default function ServicesSec() {
